@@ -1,0 +1,50 @@
+// Widget newsletter
+.widget-newsletter {
+  background: #30373b;
+  max-width: 360px;
+  color: #fff;
+  text-align: center;
+  font-family: $font-serif;
+
+  &__red-heading {
+    color: $color-primary;
+    font-weight: bold;
+  }
+
+  &__prolog {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: .1;
+    line-height: 130%;
+  }
+
+  &__sub,
+  form,
+  &__small {
+    font-family: $font-sans;
+  }
+
+  .ns-input {
+    border: none;
+    border-radius: 3px;
+  }
+
+  .ns-input,
+  .btn-newsletter {
+    padding: 14px 15px;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .btn-newsletter {
+    font-weight: bold;
+    background: $color-primary;
+  }
+
+  &__small {
+    font-size: 13px;
+    color: #8a8a8a;
+  }
+}

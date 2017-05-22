@@ -1,0 +1,38 @@
+/**
+* 1.0 Global
+*
+* Description
+*/
+body {
+  font: normal normal #{$font-size-base}/$line-height $font-sans;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  position: relative;
+  color: $color-text;
+  transition: all .3s ease;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+// Responsive img
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea
+select {
+  outline: none;
+}

@@ -1,0 +1,17 @@
+//--------------------------------------
+// Footer
+//--------------------------------------
+.footer {
+  //... some code
+}
+
+.copyright {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: $color-dark;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+}

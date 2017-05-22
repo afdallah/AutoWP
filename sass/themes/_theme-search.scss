@@ -1,0 +1,53 @@
+.search-section {
+  padding: 100px 0;
+}
+
+.theme-gallery {
+  &__filter {
+    @extend %horizontal-menu;
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    background: #eee;
+    border-radius: 3px;
+    margin: 0 7px 7px 0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 15px!important;
+
+    &.active {
+      background: $color-primary;
+      color: #fff;
+    }
+  }
+}
+
+// Themes block
+.themes-block {
+  box-shadow: 0 5px 10px rgba(#000, .1);
+  margin-bottom: 50px;
+
+  &__img {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  &__content {
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  &__name {
+    text-align: left;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 8px 0;
+  }
+
+  .btn-demo {
+    padding: 5px 20px;
+    margin: 0;
+    font-weight: bold;
+  }
+}

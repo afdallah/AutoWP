@@ -1,0 +1,375 @@
+/**
+* 1.2 Navigation
+*
+* Description
+*/
+.hot-bar {
+  text-align: center;
+  font-size: 11px;
+  background: #333;
+  color: $white;
+  padding: 10px;
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+
+  .close {
+    position: static;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.coupon-code {
+  display: inline-block;
+  background: #181818;
+  padding: 15px 10px;
+  border-radius: 3px;
+  margin-top: 1px;
+  line-height: 0;
+  margin-left: 15px;
+}
+
+// Default style
+.primary-menu {
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 0;
+  background: $midnight-blue;
+}
+
+// Brand
+.logo {
+  font-family: $font-sans;
+  font-weight: bold;
+  color: #ce1126 !important;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  max-height: 50px;
+  padding: 0 15px;
+
+  &--img {
+    max-width: 195px;
+  }
+
+  @media screen and (max-width: 1130px) {
+    max-width: 170px;
+    padding: 11px 15px;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $white;
+  font-size: 13px;
+  border-radius: 3px;
+  margin-left: 15px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 8px 15px;
+  transition: all .3s linear;
+
+  &:hover,
+  &:focus {
+    color: darken($white, 10%);
+    background: darken($color-bg-menu, 3%);
+  }
+}
+
+.navbar-form {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+// Active state
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background: $color-primary;
+  color: $white;
+}
+
+// Dropdown hovered color hanya berlaku dalam mode toggle
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background: transparent;
+  color: $white;
+
+  @media screen and (max-width: 1130px) {
+    background: darken($color-bg-menu, 5%);
+    color: darken($white, 10%);
+  }
+}
+
+// Using hover instead of click for trigger dropdown menu > 768px;
+.dropdown:hover .caret,
+.dropdown:focus .caret {
+  @media screen and(min-width: 1130px) {
+    transform: rotate(180deg);
+    top: 40%;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  // Just better styling
+  .primary-menu {
+    height: 50px;
+    z-index: 2;
+  }
+
+  .logo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .navbar-default .navbar-nav > li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $font-sans;
+    padding: 15px 15px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .navbar-toggle {
+    background: transparent!important;
+    border: none;
+    outline: none!important;
+    margin-right: 5px;
+
+    > .icon-bar {
+      background: $color-primary!important;
+    }
+
+    &.collapsed {
+      > .icon-bar {
+        background: $white!important;
+      }
+    }
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: darken($white, 30%);
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    margin-left: 0;
+  }
+
+  .navbar-collapse {
+    background: $color-bg-menu;
+    border: none;
+  }
+  .dropdown-menu {
+    position: static;
+    display: block;
+    //transform: scale(0);
+    //transform-origin: 50% 0;
+    visibility: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    transition: max-height .3s ease, opacity .2s ease;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .dropdown {
+    .caret {
+      transform: rotate(0deg);
+      top: 40%;
+    }
+  }
+
+  .dropdown.open {
+    .caret {
+      transform: rotate(180deg);
+      top: 40%;
+    }
+
+    .dropdown-menu {
+      //transform: scale(0);
+      //transform-origin: 50% 0;
+      visibility: visibile;
+      max-height: 300px;
+      opacity: 1;
+    }
+  }
+
+  /* Trigger bootstrap navbar collapse pada viewport <= 1200px */
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+  }
+
+  .navbar-nav>li {
+    float: none;
+  }
+
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .collapse.in{
+    display:block !important;
+  }
+
+  /* Hapus gap 15px pada .navbar-collapse */
+  .navbar .navbar-nav {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  /* Merapihkan dropdown menu: Warna, posisi dll */
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: darken($white, 30%);
+    padding: 15px 15px 15px 25px;
+  }
+}
+
+.dropdown-toggle {
+  position: relative;
+  padding-right: 30px!important;
+}
+
+// Caret
+.caret {
+  width: 0;
+  border: none;
+  font-family: fontawesome;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  transform: translateY(-50%) rotate(0deg);
+  font-size: 10px;
+  transition: all .3s ease;
+
+  &:after {
+    content: "\f078";
+    display: inline-block;
+  }
+}
+
+.dropdown-menu {
+  background: $color-bg-menu;
+
+  > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: $white;
+
+    &:hover {
+      background: darken( $color-bg-menu, 5% );
+      color: $white;
+    }
+  }
+
+  .divider {
+    background: lighten( $color-bg-menu, 5% );
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+//@media screen and (min-width: 1200px) {
+  //.container {
+    //max-width: 1200px;
+  //}
+//}
+
+@media screen and (min-width: 1130px) {
+  .dropdown:hover .dropdown-menu {
+    top: 100%;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .dropdown-menu {
+    display: block;
+    transform: scale(0);
+    top: 80%;
+    opacity: 0;
+    //transition: top .2s ease, opacity .7s ease;
+  }
+
+  .navbar-nav {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* Rubah behaviour .container */
+  .navbar .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    max-width: 1170px;
+    width: initial;
+  }
+
+  .navbar > .container .navbar-brand {
+    margin-left: 0;
+  }
+
+  .navbar .container .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Vertical menu
+.v-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: block;
+    padding: 10px 15px;
+  }
+}

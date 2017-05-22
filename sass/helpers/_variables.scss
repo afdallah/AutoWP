@@ -1,0 +1,91 @@
+//--------------------------------------
+// Color Global
+//--------------------------------------
+
+// Using context and crayola naming method
+$white: #fff;
+$midnight-blue: #2c3e50;
+$wild-sand: #f4f4f4;
+
+// Colour palette
+$azure-radiance: #00aaff;
+$malachite: #19b934;
+$flush-orange: #ff7800;
+$torch-red: #f9243d;
+
+// Text colour
+$limed-spruce: #333c48; // Text, value, headlines
+$regent-gray: #7f8fa4; // Descriptions, labels
+$bombay: #acb0b5; // Placeholders, inactive items
+
+// Background colour
+$whisper: #edeff6;
+
+//--------------------------------------
+// Specific naming
+//--------------------------------------
+$color-primary: $azure-radiance;
+$color-accent: $torch-red;
+$color-text: $limed-spruce;
+$color-background: $whisper;
+$color-bg-menu: $midnight-blue;
+$color-bg-footer: $midnight-blue;
+
+// Social media colors
+$color-twitter: #00aced;
+$color-facebook: #3b5998;
+$color-googleplus: #dd4b39;
+$color-pinterest: #cb2027;
+$color-linkedin: #007bb6;
+$color-youtube: #bb0000;
+$color-vimeo: #1ab7ea;
+$color-tumblr: #32506d;
+$color-instagram: #bc2a8d;
+$color-flickr: #ff0084;
+$color-dribbble: #ea4c89;
+$color-quora: #a82400;
+$color-foursquare: #0072b1;
+$color-forrst: #5B9A68;
+$color-vk: #45668e;
+$color-wordpress: #21759b;
+$color-stumbleupon: #EB4823;
+$color-yahoo: #7B0099;
+$color-blogger: #fb8f3d;
+$color-soundcloud: #ff3a00;
+$color-github: #6e5494;
+
+// Color state
+$color-info: #3498db;
+$color-danger: #e74c3c;
+$color-warning: #f1c40f;
+$color-success: #2ecc71;
+$color-dark: $midnight-blue;
+
+// Button color
+$color-button-default: #ccc;
+$color-button-info: #3498db;
+$color-button-danger: #e74c3c;
+$color-button-warning: #f1c40f;
+$color-button-success: #2ecc71;
+$color-button-dark: $midnight-blue;
+
+// Button size
+$button-font-size: 14px;
+$button-sm-v: 12px - 5px;
+$button-sm-h: 15px - 30px;
+$button-md-v: 12px;
+$button-md-h: 15px;
+$button-lg-v: 12px + 5px;
+$button-lg-h: 15px + 5px;
+
+// Fonts
+$font-serif: 'Droid Serif', serif;
+$font-sans: 'Montserrat', sans-serif;
+$font-cursive: 'Lobster', cursive;
+
+$body-font: $font-serif;
+$heading-font: $font-sans;
+$decoration-font: $font-sans;
+
+$font-size-base: 14px;
+$line-height: 1.6em;

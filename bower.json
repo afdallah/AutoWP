@@ -1,0 +1,23 @@
+{
+  "name": "source",
+  "authors": [
+    "Afdallah Wahyu Arafat <afdallah.war@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}

@@ -1,0 +1,38 @@
+/**
+* x.x Media query
+*
+* Description
+*/
+@media (max-width: 990px) {
+  .site-post.theme-detail {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .theme-card {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__img {
+      max-height: 180px;
+    }
+  }
+
+  .theme-search {
+    &__cat,
+    &__input,
+    &__btn {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      border: none;
+    }
+
+    &__cat,
+    &__input {
+      margin-bottom: 15px!important;
+    }
+  }
+}

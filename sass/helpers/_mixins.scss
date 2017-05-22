@@ -1,0 +1,31 @@
+//--------------------------------------
+// Mixins
+//--------------------------------------
+// Button
+@mixin button-variation($bg-color, $color: #fff, $radius: 3px, $font-family: $font-sans, $font-weight: bold) {
+  background: $bg-color;
+  border-radius: $radius;
+  font-family: $font-family;
+  font-weight: $font-weight;
+
+  &:focus,
+  &:hover {
+    background: darken($bg-color, 10%);
+    color: $color;
+  }
+}
+
+// Button size
+@mixin button-size($padding-v, $padding-h, $font-size) {
+  padding: $padding-v $padding-h;
+  font-size: $font-size;
+}
+
+@mixin button-border($border-color) {
+  border: 1px solid $border-color;
+  color: $border-color;
+
+  &:hover {
+    color: #fff;
+  }
+}

@@ -1,0 +1,23 @@
+// Pagination
+.page-navigation {
+  text-align: center;
+}
+
+.pagination {
+  li > a {
+    border: none;
+    font-size: 13px;
+    color: $color-primary;
+    border-radius: 3px;
+  }
+
+  .active > a {
+    background: $color-primary;
+  }
+
+  .previous,
+  .next {
+    color: $color-primary;
+  }
+}
+

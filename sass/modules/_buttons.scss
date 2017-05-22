@@ -1,0 +1,114 @@
+// Buttons
+.button {
+  display: inline-block;
+  color: $white;
+  background: $color-primary;
+  border: none;
+  text-decoration: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: all .5s ease;
+  @include button-size($button-md-v, $button-md-h, $button-font-size);
+
+  &:hover {
+    color: #fff;
+    background-color: darken( $color-primary, 10% );
+  }
+
+  // Button State
+  &--default {
+    @include button-variation($bg-color: #ddd, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-md-v, $button-md-h, $button-font-size)
+  }
+
+  &--danger {
+    @include button-variation($color-button-danger, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-md-v, $button-md-h, $button-font-size)
+  }
+
+  &--info {
+    @include button-variation($color-button-info, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-md-v, $button-md-h, $button-font-size)
+  }
+
+  &--warning {
+    @include button-variation($color-button-warning, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-md-v, $button-md-h, $button-font-size)
+  }
+
+  &--success {
+    @include button-variation($color-button-success, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-md-v, $button-md-h, $button-font-size)
+  }
+
+  &--dark {
+    @include button-variation(#34495e, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-md-v, $button-md-h, $button-font-size)
+  }
+
+  &--cta {
+    @include button-variation($color-primary, $color: $white, $radius: 3px, $font-family: $font-sans, $font-weight: bold);
+    @include button-size($button-lg-v, $button-lg-h * 3, $button-font-size * 1.2)
+  }
+
+  // Button sizing
+  &--sm {
+    @include button-size($button-sm-v, $button-sm-h, $button-font-size);
+  }
+
+  &--md {
+    @include button-size($button-md-v, $button-md-h, $button-font-size + 5px);
+  }
+
+  &--lg {
+    @include button-size($button-lg-v, $button-lg-h, $button-font-size + 5px);
+  }
+
+  &--bordered {
+    background: transparent;
+    color: #333;
+
+    &:hover {
+      color: darken(#333, 10%);
+    }
+
+    &-inverse {
+      border: 1px solid $white;
+      color: $white;
+      background: transparent;
+    }
+
+    &.button--default {
+      @include button-border($color-button-default);
+    }
+
+    &.button--danger {
+      @include button-border($color-button-danger);
+    }
+
+    &.button--warning {
+      @include button-border($color-button-warning);
+    }
+
+    &.button--success {
+      @include button-border($color-button-success);
+    }
+
+    &.button--info {
+      @include button-border($color-button-info);
+    }
+
+    &.button--dark {
+      @include button-border($color-button-dark);
+    }
+  }
+
+  &--rectangle {
+    border-radius: 0;
+  }
+
+  &--rounded {
+    border-radius: 50px;
+  }
+}

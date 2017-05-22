@@ -1,0 +1,15 @@
+.m-tag {
+  display: inline-block;
+  background-color: $white;
+  border-radius: 3px;
+  border: 1px solid lighten($text-color, 50%);
+  font-size: $font-size-base - 1px;
+
+  &__link {
+    line-height: 1.7em;
+    padding-right: 8px;
+    padding-left: 8px;
+    color: $color-primary;
+  }
+}
+

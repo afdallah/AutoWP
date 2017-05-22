@@ -1,0 +1,32 @@
+// Author box
+.author-box {
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+
+  &__img {
+    float: left;
+    max-width: 133px;
+    max-height: 133px;
+    margin-right: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+  }
+
+  &__detail {
+    float: left;
+    width: calc(100% - 133px - 30px);
+  }
+
+  &__title {
+    margin-top: 0;
+    font-weight: bold;
+  }
+
+  &__bio {
+    color: #656363;
+  }
+}
+

@@ -1,0 +1,15 @@
+// List style
+.list--style1 {
+  list-style: none;
+  padding: 0;
+  line-height: 160%;
+
+  li:before {
+    content: '\f067';
+    font-family: fontawesome;
+    font-size: 10px;
+    margin-right: 10px;
+    color: $color-primary;
+  }
+}
+

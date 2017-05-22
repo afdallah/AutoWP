@@ -1,0 +1,17 @@
+// Comment form
+.submit {
+  background: #333;
+  color: $white;
+  font-weight: bold;
+  transition: all .3s ease;
+  border: none;
+  padding: 8px 20px;
+
+  &:hover {
+    background: darken(#333, 10%);
+  }
+}
+
+.required {
+  color: $color-danger;
+}

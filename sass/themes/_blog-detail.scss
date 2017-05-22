@@ -1,0 +1,32 @@
+/**
+* 2.2 Single post
+*
+* Description
+*/
+.single-post {
+  .site-post__img {
+    margin-bottom: 25px;
+    max-height: initial;
+  }
+}
+
+.site-post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-serif;
+  }
+
+  &__meta {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    &--single {
+      font-size: 25px;
+    }
+  }
+}

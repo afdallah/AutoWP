@@ -1,0 +1,96 @@
+// Form
+.fieldset {
+  .form-label {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .form-feedback {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+
+    &:before {
+      content: "\f05a";
+      display: inline-block;
+      font-family: fontawesome;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+  }
+
+  &--success {
+    .form-label,
+    .form-feedback {
+      color: $color-success;
+    }
+
+    .input-text,
+    .input-password,
+    .input-email {
+      border-color: $color-success;
+    }
+
+    .form-feedback {
+      &:before {
+        content: "\f058";
+        display: inline-block;
+        font-family: fontawesome;
+        font-size: 14px;
+        color: $color-success;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &--warning {
+    .form-label,
+    .form-feedback {
+      color: $color-warning;
+    }
+
+    .input-text,
+    .input-password,
+    .input-email {
+      border-color: $color-warning;
+    }
+
+
+    .form-feedback {
+      &:before {
+        content: "\f06a";
+        display: inline-block;
+        font-family: fontawesome;
+        font-size: 14px;
+        color: $color-warning;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &--danger {
+    .form-label,
+    .form-feedback {
+      color: $color-danger;
+    }
+
+    .input-text,
+    .input-password,
+    .input-email {
+      border-color: $color-danger;
+    }
+
+
+
+    .form-feedback {
+      &:before {
+        content: "\f057";
+        display: inline-block;
+        font-family: fontawesome;
+        font-size: 14px;
+        color: $color-danger;
+        margin-right: 5px;
+      }
+    }
+  }
+}

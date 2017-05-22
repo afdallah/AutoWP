@@ -1,0 +1,22 @@
+// Headings
+.section-heading {
+  font-size: 52px;
+  font-family: $font-sans;
+  font-weight: bold;
+  letter-spacing: .5px;
+  margin-bottom: 38px;
+
+  &--alt {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: $font-serif;
+  }
+}
+
+.heading-subtitle {
+  margin-bottom: 90px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 70%;
+  font-weight: normal;
+}

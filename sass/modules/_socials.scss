@@ -1,0 +1,72 @@
+// Button social
+.button-social {
+  color: $white;
+  padding: 5px 20px;
+  border-radius: 3px;
+
+  &:hover {
+    color: darken($white, 5%);
+  }
+
+  &--twitter {
+    background: $color-twitter;
+  }
+
+  &--facebook {
+    background: $color-facebook;
+  }
+}
+
+.social-link {
+  display: inline-block;
+  @extend %horizontal-menu;
+
+  a {
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin: 5px;
+    padding: 0!important;
+    border-radius: 3px;
+    color: $white;
+  }
+
+  &__facebook {
+    background: $color-facebook;
+  }
+
+  &__twitter {
+    background: $color-twitter;
+  }
+
+  &__linkedin {
+    background: $color-linkedin;
+  }
+
+  &__pinterest {
+    background: $color-pinterest;
+  }
+
+  &__instagram {
+    background: $color-instagram;
+  }
+
+  &__github {
+    background: $color-github;
+  }
+
+  &__mail {
+    background: #333;
+  }
+
+  // Rounded style
+  &--rounded {
+    a {
+      border-radius: 50px;
+      overflow: hidden;
+    }
+  }
+}
+
