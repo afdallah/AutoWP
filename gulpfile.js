@@ -3,85 +3,85 @@
  * Source: https://github.com/afdallah/nusa-scaffold
  */
 
-var gulp = require('gulp'),
-  plumber = require('gulp-plumber'),
-  sass = require('gulp-sass'),
-  prefixer = require('gulp-autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps'),
-  uglify = require('gulp-uglify'),
-  minifyCss = require('gulp-uglifycss'),
-  concat = require('gulp-concat'),
-  cache = require('gulp-cache'),
-  imagemin = require('gulp-imagemin'),
-  browserSync = require('browser-sync').create(),
-  rename = require('gulp-rename'),
-  del = require('del'),
-  zip = require('gulp-zip'),
-  runSequence = require('run-sequence'),
-  notify = require('gulp-notify'),
+var gulp = require('gulp')
+var plumber = require('gulp-plumber')
+var sass = require('gulp-sass')
+var prefixer = require('gulp-autoprefixer')
+var sourcemaps = require('gulp-sourcemaps')
+var uglify = require('gulp-uglify')
+var minifyCss = require('gulp-uglifycss')
+var concat = require('gulp-concat')
+var cache = require('gulp-cache')
+var imagemin = require('gulp-imagemin')
+var browserSync = require('browser-sync').create()
+var rename = require('gulp-rename')
+var del = require('del')
+var zip = require('gulp-zip')
+var runSequence = require('run-sequence')
+var notify = require('gulp-notify')
 
-  config = {
-    projectName: 'Nusathemes',
-    version: '1.0.0',
-    projectDir: './',
-    projectURL: 'nusathemes.dev'
+var config = {
+  projectName: 'Nusathemes',
+  version: '1.0.0',
+  projectDir: './',
+  projectURL: 'nusathemes.dev'
+}
+
+// Zip file name
+var pkgName = `${config.projectName}-${config.version}`
+
+// Path
+var rootDir = './'
+var srcDir = './source'
+var distDir = rootDir
+
+var buildInclude 	= [
+  // include common file types
+  '**/*.php',
+  '**/*.html',
+  '**/*.css',
+  '**/*.js',
+  '**/*.svg',
+  '**/*.ttf',
+  '**/*.otf',
+  '**/*.eot',
+  '**/*.woff',
+  '**/*.woff2',
+
+  // include specific files and folders
+  'screenshot.png',
+
+  // exclude files and folders
+  '!node_modules/**/*',
+  '!source/**/*',
+  '!assets/js/custom/*',
+  '!*.map',
+  '!.git',
+  '!.gitignore',
+  '!package.json',
+  '!gulpfile.js',
+  '!maps/**/*',
+  '!assets/js/custom/*',
+  '!' + pkgName + '/**/*'
+]
+
+var path = {
+  html: './**/*.html',
+  php: './**/*.php',
+  sass: {
+    src: './source/sass/**/*.scss',
+    dest: './assets/css'
   },
-
-  // Zip file name
-  pkgName = `${config.projectName}-${config.version}`,
-
-  // Path
-  rootDir = './',
-  srcDir = './source',
-  distDir = rootDir,
-
-  buildInclude 	= [
-    // include common file types
-    '**/*.php',
-    '**/*.html',
-    '**/*.css',
-    '**/*.js',
-    '**/*.svg',
-    '**/*.ttf',
-    '**/*.otf',
-    '**/*.eot',
-    '**/*.woff',
-    '**/*.woff2',
-
-    // include specific files and folders
-    'screenshot.png',
-
-    // exclude files and folders
-    '!node_modules/**/*',
-    '!source/**/*',
-    '!assets/js/custom/*',
-    '!*.map',
-    '!.git',
-    '!.gitignore',
-    '!package.json',
-    '!gulpfile.js',
-    '!maps/**/*',
-    '!assets/js/custom/*',
-    '!' + pkgName + '/**/*',
-  ],
-    path = {
-      html: './**/*.html',
-      php: './**/*.php',
-      sass: {
-        src: './source/sass/**/*.scss',
-        dest: './assets/css'
-      },
-      js: {
-        src: './assets/js/custom/**/*.js',
-        vendorSrc: './assets/js/vendor/**/*.js',
-        dest: './assets/js/'
-      },
-      img: {
-        src: './assets/img/raw/**/*.{jpg, png, svg, jpeg}',
-        dest: './assets/img/'
-      }
-    };
-
+  js: {
+    src: './assets/js/custom/**/*.js',
+    vendorSrc: './assets/js/vendor/**/*.js',
+    dest: './assets/js/'
+  },
+  img: {
+    src: './assets/img/raw/**/*.{jpg, png, svg, jpeg}',
+    dest: './assets/img/'
+  }
+}
 
 // SASS Task
 gulp.task('sass', function () {
@@ -90,11 +90,11 @@ gulp.task('sass', function () {
     .pipe(plumber({
       errorHandler: function (err) {
         notify.onError({
-          title: "Gulp error in " + err.plugin,
+          title: `Gulp error in ` + err.plugin,
           subtitle: 'Error',
           message: err.toString(),
-          sound: "Beep"
-        })(err);
+          sound: `Beep`
+        })(err)
       }
     }))
 
@@ -121,7 +121,7 @@ gulp.task('sass', function () {
       stream: true
     }))
     .pipe(gulp.dest(path.sass.dest))
-});
+})
 
 // Vendors Task
 gulp.task('vendorsJs', function () {
@@ -134,7 +134,7 @@ gulp.task('vendorsJs', function () {
     }))
     .pipe(uglify())
     .pipe(gulp.dest(path.js.dest))
-});
+})
 
 // CustomJs Task
 gulp.task('customJs', function () {
@@ -147,7 +147,7 @@ gulp.task('customJs', function () {
     }))
     .pipe(uglify())
     .pipe(gulp.dest(path.js.dest))
-});
+})
 
 // Image Task
 gulp.task('images', function () {
@@ -176,42 +176,42 @@ gulp.task('images', function () {
       subtitle: 'Gulp - Success',
       message: 'Image Task, completed! No error found.\n Output: <%= file.relative %>',
       onLast: true
-    }));
-});
+    }))
+})
 
 // Browser Sync
 gulp.task('serve', function () {
   browserSync.init({
-    // server: {
-      // baseDir: './',
-    // },
+  // server: {
+    // baseDir: './',
+  // },
 
     open: true,
     proxy: config.projectURL, // or project.dev/app/
     port: 3000
-  });
-});
+  })
+})
 
 // Clear Cache task
 gulp.task('clearCache', function () {
-  cache.clearAll();
-});
+  cache.clearAll()
+})
 
 // Cleanup
 gulp.task('clean', function () {
   // You can use multiple globbing patterns as you would with `gulp.src`
-  return del(['**/.sass-cache', '**./DS_Store', '**/*.swp', '**/*.swap', '**/*.zip', '**/*.rar']);
-});
+  return del(['**/.sass-cache', '**./DS_Store', '**/*.swp', '**/*.swap', '**/*.zip', '**/*.rar'])
+})
 
-gulp.task('buildFiles', function() {
+gulp.task('buildFiles', function () {
   return gulp.src(buildInclude)
     .pipe(gulp.dest(pkgName))
-});
+})
 
-gulp.task('buildImages', function() {
-  return  gulp.src(['assets/img/**/*', '!assets/images/raw/**'])
-    .pipe(gulp.dest(pkgName + '/assets/img/'));
-});
+gulp.task('buildImages', function () {
+  return gulp.src(['assets/img/**/*', '!assets/images/raw/**'])
+    .pipe(gulp.dest(pkgName + '/assets/img/'))
+})
 
 gulp.task('makezip', function () {
   return gulp.src(pkgName + '/**/*')
@@ -221,21 +221,21 @@ gulp.task('makezip', function () {
     .pipe(notify({
       title: config.projectName,
       subtitle: config.projectName,
-      message: "Bundling Project Completed. Output file: <%= file.relative %>",
+      message: 'Bundling Project Completed. Output file: <%= file.relative %>',
       sound: 'Pop',
       onLast: true
-    }));
-});
+    }))
+})
 
 // Bundle Task
 gulp.task('bundle', function (cb) {
-  runSequence('clean', 'clearCache', 'sass', 'vendorsJs', 'customJs', 'images', 'buildFiles', 'buildImages', 'makezip', cb);
-});
+  runSequence('clean', 'clearCache', 'sass', 'vendorsJs', 'customJs', 'images', 'buildFiles', 'buildImages', 'makezip', cb)
+})
 
 // Default task
 gulp.task('default', ['sass', 'vendorsJs', 'customJs', 'images', 'serve'], function () {
-  gulp.watch(path.php, browserSync.reload); // Reload on PHP file changes.
-  gulp.watch(path.sass.src, ['sass']); // Reload on SCSS file changes.
-  gulp.watch(path.js.src, ['customJs'], browserSync.reload); // Reload on SCSS file changes.
-  gulp.watch(path.js.vendorSrc, ['vendorsJs'], browserSync.reload); // Reload on SCSS file changes.
-});
+  gulp.watch(path.php, browserSync.reload) // Reload on PHP file changes.
+  gulp.watch(path.sass.src, ['sass']) // Reload on SCSS file changes.
+  gulp.watch(path.js.src, ['customJs'], browserSync.reload) // Reload on SCSS file changes.
+  gulp.watch(path.js.vendorSrc, ['vendorsJs'], browserSync.reload) // Reload on SCSS file changes.
+})
