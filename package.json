@@ -1,11 +1,11 @@
 {
-  "name": "auto-wp",
+  "name": "autowp",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Afdallah Wahyu Arafat",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.8",
@@ -30,11 +30,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:afdallah/AutoWP.git"
+    "url": "git+ssh://git@github.com/afdallah/AutoWP.git"
   },
   "bugs": {
     "url": "https://github.com/afdallah/AutoWP/issues"
   },
   "homepage": "https://gitlab.com/afdallah/AutoWP/#README.md",
-  "description": "AutoWP A simple gulp script to make your wordpress development workflow automatic. Its free!. :tea:"
+  "description": "AutoWP A simple gulp script to make your wordpress development workflow automatic. Its free!. :tea:",
+  "dependencies": {},
+  "keywords": [
+    "gulp",
+    "wordpress"
+  ]
 }
