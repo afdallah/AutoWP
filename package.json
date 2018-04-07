@@ -1,5 +1,5 @@
 {
-  "name": "start-wp",
+  "name": "auto-wp",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "scripts": {
@@ -30,11 +30,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:afdallah/wpdev-auto.git"
+    "url": "git@github.com:afdallah/AutoWP.git"
   },
   "bugs": {
-    "url": "https://github.com/afdallah/wpdev-auto/issues"
+    "url": "https://github.com/afdallah/AutoWP/issues"
   },
-  "homepage": "https://gitlab.com/afdallah/wpdev-auto/#README.md",
-  "description": "Wpdev-auto A simple gulp script to make your wordpress development workflow automatic. Its free!. :tea:"
+  "homepage": "https://gitlab.com/afdallah/AutoWP/#README.md",
+  "description": "AutoWP A simple gulp script to make your wordpress development workflow automatic. Its free!. :tea:"
 }

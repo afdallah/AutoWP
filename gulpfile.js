@@ -1,6 +1,6 @@
 /**
  * Author: Afdallah Wahyu Arafat <afdallah.war@gmail.com>
- * Source: https://github.com/afdallah/nusa-scaffold
+ * Source: https://github.com/afdallah/AutoWP
  */
 
 var gulp = require('gulp')
@@ -114,12 +114,8 @@ gulp.task('sass', function () {
     }))
 
     .pipe(minifyCss())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(browserSync.reload({ stream: true }))
     .pipe(gulp.dest(path.sass.dest))
 })
 
